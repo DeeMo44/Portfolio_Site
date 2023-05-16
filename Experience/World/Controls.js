@@ -23,6 +23,7 @@ export default class Controls {
     this.circleThird = this.experience.world.floor.circleThird;
     gsap.registerPlugin(ScrollTrigger);
 
+    document.querySelector(".page").style.overflow = "visible";
 
     this.setSmoothScroll();
     this.setRoomScrollTrigger();
@@ -166,9 +167,9 @@ export default class Controls {
             y: () => {
               return this.sizes.height * 0.00096;
             },
-            z: () =>{
-              return this.sizes.width *0.0005
-            }
+            z: () => {
+              return this.sizes.width * 0.0005;
+            },
           },
           "same"
         );
@@ -182,6 +183,7 @@ export default class Controls {
           end: "bottom bottom",
           scrub: 0.8,
           invalidateOnRefresh: true,
+          // markers: true,
         },
       });
       this.fourthMoveTimeLine
@@ -208,7 +210,7 @@ export default class Controls {
           {
             y: 0,
             x: 0,
-            z: 0
+            z: 0,
           },
           "same"
         )
@@ -316,8 +318,8 @@ export default class Controls {
         scrollTrigger: {
           // markers: true,
           trigger: ".fourth-move",
-          start: "center center",
-          scrub: 0.8,
+          start: "top top",
+          scrub: 0.4,
           invalidateOnRefresh: true,
         },
       })
@@ -443,7 +445,7 @@ export default class Controls {
       x: 3,
       y: 3,
       z: 3,
-    })
+    });
     //fourth section and move ----------------------------------
     this.fourthMoveTimeLine = new gsap.timeline({
       scrollTrigger: {
@@ -471,11 +473,16 @@ export default class Controls {
           z: 0,
         },
         "same"
-      ).to(this.circleThird.scale, {
-        x: 0,
-        y: 0,
-        z: 0,
-      }, "same")
+      )
+      .to(
+        this.circleThird.scale,
+        {
+          x: 0,
+          y: 0,
+          z: 0,
+        },
+        "same"
+      );
     //circle animation -------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------
 
