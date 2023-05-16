@@ -1,279 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <title>DW Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?">
-  </head>
-  <body class="light-theme">
-    <div class="experience">
-      <canvas class="experience-canvas"></canvas>
-    </div>
 
-    <!-- preload -->
-    <div class="preloader hidden">
-      <div class="preloader-wrapper">
-        <div class="loading">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <title>DW Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?">
+</head>
+
+<body class="light-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"></canvas>
+  </div>
+
+  <!-- preload -->
+  <div class="preloader hidden">
+    <div class="preloader-wrapper">
+      <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" asscroll-container>
+    <div class="toggle-bar">
+      <div class="sun-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+          <path fill="currentColor"
+            d="M450 246V136h60v110h-60Zm0 770V906h60v110h-60Zm360-410v-60h110v60H810Zm-770 0v-60h110v60H40Zm702-250-43-43 66-66 43 43-66 66ZM195 905l-43-43 66-66 43 43-66 66Zm570 0-66-66 43-43 66 66-43 43ZM218 356l-66-66 43-43 66 66-43 43Zm261.824 445Q386 801 320.5 735.324 255 669.647 255 575.823 255 482 320.676 416.5q65.677-65.5 159.5-65.5Q574 351 639.5 416.677q65.5 65.676 65.5 159.5Q705 670 639.323 735.5 573.647 801 479.824 801Zm.11-60Q549 741 597 693.066t48-117Q645 507 597.066 459t-117-48Q411 411 363 458.934t-48 117Q315 645 362.934 693t117 48ZM480 576Z" />
+        </svg>
+      </div>
+
+      <button class="toggle-button">
+        <div class="toggle-circle"></div>
+      </button>
+      <div class="moon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+          <path fill="currentColor"
+            d="M483 976q-84 0-157.5-32t-128-86.5Q143 803 111 729.5T79 572q0-146 93-257.5T409 176q-18 98 11 192.635 29 94.635 100 165.736 71 71.101 165.5 100.143Q780 663.555 879 645.529q-26 144.206-138 237.338Q629 976 483 976Zm0-60q100 0 182-57t132-145q-90-8-173-41.5T477.5 576Q414 513 381 430.5T340 259q-88 48-144.5 130.5T139 572q0 143.333 100.333 243.667Q339.667 916 483 916Zm-6-340Zm267-128-42-94-94-42 94-42 42-94 42 94 94 42-94 42-42 94Z" />
+        </svg>
       </div>
     </div>
 
-    <div class="page" asscroll-container>
-      <div class="toggle-bar">
-        <div class="sun-wrapper">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 96 960 960"
-            width="24"
-          >
-            <path
-              fill="currentColor"
-              d="M450 246V136h60v110h-60Zm0 770V906h60v110h-60Zm360-410v-60h110v60H810Zm-770 0v-60h110v60H40Zm702-250-43-43 66-66 43 43-66 66ZM195 905l-43-43 66-66 43 43-66 66Zm570 0-66-66 43-43 66 66-43 43ZM218 356l-66-66 43-43 66 66-43 43Zm261.824 445Q386 801 320.5 735.324 255 669.647 255 575.823 255 482 320.676 416.5q65.677-65.5 159.5-65.5Q574 351 639.5 416.677q65.5 65.676 65.5 159.5Q705 670 639.323 735.5 573.647 801 479.824 801Zm.11-60Q549 741 597 693.066t48-117Q645 507 597.066 459t-117-48Q411 411 363 458.934t-48 117Q315 645 362.934 693t117 48ZM480 576Z"
-            />
-          </svg>
-        </div>
-        <button class="toggle-button">
-          <div class="toggle-circle"></div>
-        </button>
-        <div class="moon-wrapper">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 96 960 960"
-            width="24"
-          >
-            <path
-              fill="currentColor"
-              d="M483 976q-84 0-157.5-32t-128-86.5Q143 803 111 729.5T79 572q0-146 93-257.5T409 176q-18 98 11 192.635 29 94.635 100 165.736 71 71.101 165.5 100.143Q780 663.555 879 645.529q-26 144.206-138 237.338Q629 976 483 976Zm0-60q100 0 182-57t132-145q-90-8-173-41.5T477.5 576Q414 513 381 430.5T340 259q-88 48-144.5 130.5T139 572q0 143.333 100.333 243.667Q339.667 916 483 916Zm-6-340Zm267-128-42-94-94-42 94-42 42-94 42 94 94 42-94 42-42 94Z"
-            />
-          </svg>
-        </div>
-      </div>
+    <!-- buttons for quickness -->
+    <div class="quick-buttons ">
 
-      <div class="page-wrapper" asscroll>
-        <section class="hero">
-          <div class="hero-wrapper">
-            <!-- intro -->
-            <div class="intro-text">Welcome to My Room!</div>
-            <div class="arrow-svg-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="32"
-                viewBox="0 96 960 960"
-                width="32"
-              >
-                <path
-                  fill="currentColor"
-                  d="M480 856 240 616l56-56 184 183 184-183 56 56-240 240Zm0-240L240 376l56-56 184 183 184-183 56 56-240 240Z"
-                />
-              </svg>
-            </div>
+      <div class="about-me-button"><a class="qb qb-about" href="#about">About</a></div>
 
-            <div class="hero-main">
-              <h1 class="hero-main-title">DeMario Ward</h1>
-              <p class="hero-main-description">
-                Full Stack Developer | Marine Corps Veteran
-              </p>
-            </div>
+      <div class="skills-button"><a class="qb qb-skills" href="#skills">Skills</a></div>
+
+      <div class="projects-button"><a class="qb qb-projects" href="#projects">Projects</a></div>
+
+      <div class="contact-button"><a class="qb qb-contact" href="#contact">Contact</a></div>
+
+    </div>
+    <div class="page-wrapper" asscroll>
+      <section class="hero">
+        <div class="hero-wrapper">
+          <!-- intro -->
+          <div class="intro-text">Welcome to My Room!</div>
+          <div class="arrow-svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32">
+              <path fill="currentColor"
+                d="M480 856 240 616l56-56 184 183 184-183 56 56-240 240Zm0-240L240 376l56-56 184 183 184-183 56 56-240 240Z" />
+            </svg>
+          </div>
+
+          <div class="hero-main">
+            <h1 class="hero-main-title">DeMario Ward</h1>
+            <p class="hero-main-description">
+              Full Stack Developer
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="lock">
+        <div class="first-move section-margin"></div>
+
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+
+          <div id="about" class="quick-scroll"></div>
+
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">
+                <div class="center">
+                  <h1>
+                    <span>about</span>
+                    <span>about</span>
+                    <span>about</span>
+                  </h1>
+                </div>
+              </span>
+
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+            <span class="section-number">01</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Growing Up</h3>
+            <p class="section-text">
+              I've always been fascinated by technology, spending hours
+              exploring new videogames and tinkering with gadgets as a child.
+              I pursued this passion by attending a technical school, where I
+              learned the sciences of electricity and electronics. After
+              graduation, I joined the Marine Corps as an IT Professional
+            </p>
+            <h3 class="section-heading">IT Professional</h3>
+            <p class="section-text">
+              As a Marine Corps IT professional, I maintained and
+              troubleshooted technology for my unit. I developed adaptability,
+              creative problem-solving skills, and worked well under pressure.
+              My time in the Marines provided invaluable experience that has
+              helped me in my career as an IT professional. As I was leaving
+              the military I decided to become a Full Stack Developer to
+              continue learning more about technology.
+            </p>
+            <h3 class="section-heading">Full Stack Developer</h3>
+            <p class="section-text">
+              I became a fullstack developer through LEARN Academy, where I
+              learned various programming languages and software development
+              methodologies. The intensive bootcamp provided a supportive
+              environment that allowed me to develop my skills rapidly. I feel
+              confident in my ability to build complex web applications. The
+              experience was rewarding, and I'm grateful to LEARN Academy for
+              giving me the tools to succeed.
+            </p>
           </div>
         </section>
 
-        <div class="lock">
-          <div class="first-move section-margin"></div>
+        <div class="second-move section-margin"></div>
 
-          <section class="first-section section left">
-            <div class="progress-wrapper progress-bar-wrapper-left">
-              <div class="progress-bar"></div>
-            </div>
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar"></div>
+          </div>
 
-            <div class="section-intro-wrapper">
-              <h1 class="section-title">
-                <span class="section-title-text"
-                  ><div class="center">
-                    <h1>
-                      <span>about</span>
-                      <span>about</span>
-                      <span>about</span>
-                    </h1>
-                  </div></span
-                >
+          <div id="skills" class="quick-scroll"></div>
 
-                <div class="section-title-decoration styleOne"></div>
-                <div class="section-title-decoration styleTwo"></div>
-                <div class="section-title-decoration styleThree"></div>
-              </h1>
-              <span class="section-number">01</span>
-            </div>
-            <div class="section-detail-wrapper">
-              <h3 class="section-heading">Growing Up</h3>
-              <p class="section-text">
-                I've always been fascinated by technology, spending hours
-                exploring new videogames and tinkering with gadgets as a child.
-                I pursued this passion by attending a technical school, where I
-                learned the sciences of electricity and electronics. After
-                graduation, I joined the Marine Corps as an IT Professional
-              </p>
-              <h3 class="section-heading">IT Professional</h3>
-              <p class="section-text">
-                As a Marine Corps IT professional, I maintained and
-                troubleshooted technology for my unit. I developed adaptability,
-                creative problem-solving skills, and worked well under pressure.
-                My time in the Marines provided invaluable experience that has
-                helped me in my career as an IT professional. As I was leaving
-                the military I decided to become a Full Stack Developer to
-                continue learning more about technology.
-              </p>
-              <h3 class="section-heading">Full Stack Developer</h3>
-              <p class="section-text">
-                I became a fullstack developer through LEARN Academy, where I
-                learned various programming languages and software development
-                methodologies. The intensive bootcamp provided a supportive
-                environment that allowed me to develop my skills rapidly. I feel
-                confident in my ability to build complex web applications. The
-                experience was rewarding, and I'm grateful to LEARN Academy for
-                giving me the tools to succeed.
-              </p>
-            </div>
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">
+                <div class="center">
+                  <h1>
+                    <span>skills</span>
+                    <span>skills</span>
+                    <span>skills</span>
+                  </h1>
+                </div>
+              </span>
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+
+            <span class="section-number">02</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">What Do I Have to Offer?</h3>
+            <p class="section-text">
+              As a full-stack developer, my skills in JavaScript, Python,
+              HTML, CSS, and frameworks like React.js and Ruby on Rails make
+              me an excellent fit for any company seeking a versatile and
+              knowledgeable developer. With experience in version control
+              using Git and testing with JEST and RSpec, I ensure that my code
+              is always of high quality. Additionally, Three.js allows me to
+              create engaging and interactive web applications that enhance
+              user experience. Overall, my strong problem-solving skills,
+              attention to detail, and ability to work collaboratively make me
+              a valuable asset to any team.
+            </p>
+          </div>
+          <table>
+            <tr class="first-row">
+              <td><i class="devicon-javascript-plain"></i></td>
+              <td><i class="devicon-ruby-plain"></i></td>
+              <td><i class="devicon-python-plain"></i></td>
+              <td><i class="devicon-html5-plain"></i></td>
+            </tr>
+            <tr class="second-row">
+              <td><i class="devicon-react-original"></i></td>
+              <td><i class="devicon-rails-plain"></i></td>
+              <td><i class="devicon-postgresql-plain"></i></td>
+              <td><i class="devicon-css3-plain"></i></td>
+            </tr>
+
+            <tr class="third-row">
+              <td><i class="devicon-rspec-original"></i></td>
+              <td><i class="devicon-jest-plain"></i></td>
+              <td><i class="devicon-github-original"></i></td>
+              <td><i class="devicon-git-plain"></i></td>
+            </tr>
+          </table>
+        </section>
+
+        <div class="third-move section-margin"></div>
+
+        <section class="third-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div id="projects" class="quick-scroll"></div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">
+                <div class="center projects">
+                  <h1>
+                    <span>projects</span>
+                    <span>projects</span>
+                    <span>projects</span>
+                  </h1>
+                </div>
+              </span>
+            </h1>
+            <span class="section-number">03</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Would'ja Look at That?</h3>
+            <p class="section-text">
+              Here, you'll find a showcase of my work as a full-stack
+              developer. I am always looking for new and exciting projects to
+              work on, so please don't hesitate to reach out if you're
+              interested in discussing potential opportunities. Thank you for
+              taking the time to view my portfolio, and I hope that my
+              projects inspire you as much as they have inspired me!
+            </p>
+          </div>
+
+          <!-- project carousel -->
+          <section class="carousel" aria-label="Gallery">
+            <ol class="carousel__viewport">
+              <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                </div>
+              </li>
+              <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper"></div>
+              </li>
+              <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper"></div>
+              </li>
+              <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper"></div>
+              </li>
+            </ol>
+            <aside class="carousel__navigation">
+              <ol class="carousel__navigation-list">
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide1" class="carousel__navigation-button">1</a>
+                </li>
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide2" class="carousel__navigation-button">2</a>
+                </li>
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide3" class="carousel__navigation-button">3</a>
+                </li>
+                <li class="carousel__navigation-item">
+                  <a href="#carousel__slide4" class="carousel__navigation-button">4</a>
+                </li>
+              </ol>
+            </aside>
           </section>
+          <h2 class="project-words">Woah! How I Do Dat?</h2>
+        </section>
 
-          <div class="second-move section-margin"></div>
+        
 
-          <section class="second-section section right">
-            <div class="progress-wrapper progress-bar-wrapper-right">
-              <div class="progress-bar"></div>
+        <div class="fourth-move section-margin"></div>
+
+        <section class="fourth-section section">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div id="contact" class="quick-scroll"></div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">
+                <div class="center contact">
+                  <h1>
+                    <span>contact</span>
+                    <span>contact</span>
+                    <span>contact</span>
+                  </h1>
+                </div>
+              </span>
+            </h1>
+            <span class="section-number">04</span>
+          </div>
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading last">
+              For any project or job inquiries, please contact me!
+            </h3>
+            <div class="contact-me">
+              <a style="text-decoration:none" href="https://www.linkedin.com/in/demario-ward/"><i
+                  class="devicon-linkedin-plain colored"></i>
+                <a style="text-decoration:none" href="https://github.com/DeeMo44"><i
+                    class="devicon-github-original colored"></i></a>
+                <a style="text-decoration:none" href="resume.pdf" download><button class="learn-more">download my
+                    resume</button></a>
             </div>
-
-            <div class="section-intro-wrapper">
-              <h1 class="section-title">
-                <span class="section-title-text"
-                  ><div class="center">
-                    <h1>
-                      <span>skills</span>
-                      <span>skills</span>
-                      <span>skills</span>
-                    </h1>
-                  </div></span
-                >
-                <div class="section-title-decoration styleOne"></div>
-                <div class="section-title-decoration styleTwo"></div>
-                <div class="section-title-decoration styleThree"></div>
-              </h1>
-
-              <span class="section-number">02</span>
-            </div>
-            <div class="section-detail-wrapper">
-              <h3 class="section-heading">What Do I Have to Offer?</h3>
-              <p class="section-text">
-                As a full-stack developer, my skills in JavaScript, Python,
-                HTML, CSS, and frameworks like React.js and Ruby on Rails make
-                me an excellent fit for any company seeking a versatile and
-                knowledgeable developer. With experience in version control
-                using Git and testing with JEST and RSpec, I ensure that my code
-                is always of high quality. Additionally, Three.js allows me to
-                create engaging and interactive web applications that enhance
-                user experience. Overall, my strong problem-solving skills,
-                attention to detail, and ability to work collaboratively make me
-                a valuable asset to any team.
-              </p>
-            </div>
-            <table>
-              <tr class="first-row">
-                <td><i class="devicon-javascript-plain"></i></td>
-                <td><i class="devicon-ruby-plain"></i></td>
-                <td><i class="devicon-python-plain"></i></td>
-                <td><i class="devicon-html5-plain"></i></td>
-              </tr>
-              <tr class="second-row">
-                <td><i class="devicon-react-original"></i></td>
-                <td><i class="devicon-rails-plain"></i></td>
-                <td><i class="devicon-postgresql-plain"></i></td>
-                <td><i class="devicon-css3-plain"></i></td>
-              </tr>
-
-              <tr class="third-row">
-                <td><i class="devicon-rspec-original"></i></td>
-                <td><i class="devicon-jest-plain"></i></td>
-                <td><i class="devicon-github-original"></i></td>
-                <td><i class="devicon-git-plain"></i></td>
-              </tr>
-            </table>
-          </section>
-
-          <div class="third-move section-margin"></div>
-
-          <section class="third-section section left">
-            <div class="progress-wrapper progress-bar-wrapper-left">
-              <div class="progress-bar"></div>
-            </div>
-
-            <div class="section-intro-wrapper">
-              <h1 class="section-title">
-                <span class="section-title-text"
-                  ><div class="center projects">
-                    <h1>
-                      <span>projects</span>
-                      <span>projects</span>
-                      <span>projects</span>
-                    </h1>
-                  </div></span
-                >
-              </h1>
-              <span class="section-number">03</span>
-            </div>
-            <div class="section-detail-wrapper">
-              <h3 class="section-heading">Would'ja Look at That?</h3>
-              <p class="section-text">
-                Here, you'll find a showcase of my work as a full-stack
-                developer. I am always looking for new and exciting projects to
-                work on, so please don't hesitate to reach out if you're
-                interested in discussing potential opportunities. Thank you for
-                taking the time to view my portfolio, and I hope that my
-                projects inspire you as much as they have inspired me!
-              </p>
-            </div>
-          </section>
-
-          <div class="fourth-move section-margin"></div>
-
-          <section class="fourth-section section">
-            <div class="progress-wrapper progress-bar-wrapper-right">
-              <div class="progress-bar"></div>
-            </div>
-
-            <div class="section-intro-wrapper">
-              <h1 class="section-title">
-                <span class="section-title-text"
-                  ><div class="center contact">
-                    <h1>
-                      <span>contact</span>
-                      <span>contact</span>
-                      <span>contact</span>
-                    </h1>
-                  </div></span
-                >
-              </h1>
-              <span class="section-number">04</span>
-            </div>
-            <div class="section-detail-wrapper">
-              <h3 class="section-heading last">
-                For any project or job inquiries, please contact me!
-              </h3>
-              <div class="contact-me">
-                <a style="text-decoration:none" href="https://www.linkedin.com/in/demario-ward/"><i class="devicon-linkedin-plain colored"></i>
-                <a style="text-decoration:none" href="https://github.com/DeeMo44" ><i class="devicon-github-original colored"></i></a>
-                <a style="text-decoration:none" href="resume.pdf" download><button class="learn-more">download my resume</button></a>
-              </div>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

@@ -34,18 +34,14 @@ export default class Preloader extends EventEmitter {
     return new Promise((resolve) => {
       this.timeline = new gsap.timeline();
 
-      this.timeline.set(".animatedis", {y:0, yPercent:100,})
+      this.timeline.set(".animatedis", { y: 0, yPercent: 100 });
 
-      this.timeline
-        .to(
-         ".preloader",
-          {
-            opacity: 0,
-            onComplete: ()=>{
-              document.querySelector(".preloader").classList.add("hidden")
-            }
-          }
-        )
+      this.timeline.to(".preloader", {
+        opacity: 0,
+        onComplete: () => {
+          document.querySelector(".preloader").classList.add("hidden");
+        },
+      });
 
       this.room.position.set(0, 0, 4);
       this.timeline
@@ -75,21 +71,7 @@ export default class Preloader extends EventEmitter {
           stagger: 0.05,
           ease: "back.out(3.5)",
         })
-        .to(
-          ".arrow-svg-wrapper",
-          {
-            opacity: 1,
-          },
-          "same"
-        )
-        .to(
-          ".toggle-bar",
-          {
-            opacity: 1,
-            onComplete: resolve,
-          },
-          "same"
-        );
+        .to({}, { delay: 0.3, onComplete: resolve });
     });
   }
 
@@ -331,67 +313,41 @@ export default class Preloader extends EventEmitter {
           },
           "chair"
         )
+        .to(".arrow-svg-wrapper", {
+          opacity: 1,
+        })
         .to(
-          ".arrow-svg-wrapper",
+          ".toggle-bar",
+          {
+            opacity: 1,
+          },
+          "chair"
+        )
+        .to(
+          ".qb",
           {
             opacity: 1,
             onComplete: resolve,
-          });
+          },
+          "chair"
+        );
     });
-  }
-
-  onScroll(e) {
-    if (e.deltaY > 0) {
-      this.removeEventListeners();
-      this.playSecondIntro();
-    }
-  }
-
-  onTouch(e) {
-    this.initialY = e.touches[0].clientY;
-  }
-
-  onTouchMove(e) {
-    let currentY = e.touches[0].clientY;
-    let difference = this.initialY - currentY;
-    if (difference > 0) {
-      console.log("swiped up");
-      this.removeEventListeners();
-      this.playSecondIntro();
-    }
-    this.initialY = null;
-  }
-
-  removeEventListeners() {
-    window.removeEventListener("wheel", this.scrollOnceEvent);
-    window.removeEventListener("touchstart", this.touchStart);
-    window.removeEventListener("touchmove", this.touchMove);
   }
 
   async playIntro() {
     await this.firstIntro();
-    this.moveFlag = true;
-    this.scrollOnceEvent = this.onScroll.bind(this);
-    this.touchStart = this.onTouch.bind(this);
-    this.touchMove = this.onTouchMove.bind(this);
-    window.addEventListener("wheel", this.scrollOnceEvent);
-    window.addEventListener("touchstart", this.touchStart);
-    window.addEventListener("touchmove", this.touchMove);
+    this.playSecondIntro();
   }
 
   async playSecondIntro() {
-    this.moveFlag = false;
     await this.secondIntro();
-    document.querySelector("body").style.overflow = "visible"
-    document.querySelector(".page").style.overflow = "visible"
-    console.log("body ready")
+    window.scrollBy(0, 1);
+    console.log("second intro done");
   }
 
   move() {
-    this.room.position.set(0, 0, -1);
   }
 
   update() {
-    if (this.moveFlag) this.move();
   }
 }

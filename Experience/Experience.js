@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 import Sizes from "./Utils/Sizes.js";
-import Time from "./Utils/Time.js"
+import Time from "./Utils/Time.js";
 import Resources from "./Utils/Resources.js";
 import assets from "./Utils/assets.js";
 
@@ -22,34 +22,37 @@ export default class Experience {
     Experience.instance = this;
     this.canvas = canvas;
     this.scene = new THREE.Scene();
-    this.time = new Time
+    this.time = new Time();
     this.sizes = new Sizes();
     this.camera = new Camera();
     this.renderer = new Renderer();
-    this.resources = new Resources(assets)
-    this.theme = new Theme()
-    this.world = new World()
-    this.preloader = new Preloader()
+    this.resources = new Resources(assets);
+    this.theme = new Theme();
+    this.world = new World();
+    this.preloader = new Preloader();
+
+    this.preloader.on("enable controls", () => {
+      this.controls = new Controls();
+    });
 
     this.sizes.on("resize", () => {
-      this.resize()
-    })
+      this.resize();
+    });
     this.time.on("update", () => {
-      this.update()
-    })
-
+      this.update();
+    });
   }
 
-  resize(){
-    this.camera.resize()
-    this.world.resize()
-    this.renderer.resize()
+  resize() {
+    this.camera.resize();
+    this.world.resize();
+    this.renderer.resize();
   }
 
-  update(){
-    this.preloader.update()
-    this.camera.update()
-    this.world.update()
-    this.renderer.update()
+  update() {
+    this.preloader.update();
+    this.camera.update();
+    this.world.update();
+    this.renderer.update();
   }
 }
