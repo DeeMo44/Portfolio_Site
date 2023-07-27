@@ -17,7 +17,6 @@ html, body{
   color: var(--text-black)
 }
 
-
 a{
   position: relative;
   height: 100%;
@@ -48,7 +47,6 @@ svg{
   --color-background-dark: rgb(79, 52, 160);
   --color-title-text-primary-dark: rgba(255, 255, 255, 0.692);
   --color-title-text-secondary-dark: rgba(255, 255, 255, 0.528);
-
 }
 
 .light-theme{
@@ -72,7 +70,6 @@ svg{
 }
 
 /* Experience Folder related Styles -----------------------------*/
-
 .experience{
   position: fixed;
   width: 100vw;
@@ -105,6 +102,7 @@ svg{
   width: auto;
   height: 100vh;
 }
+
 .loading{
   display: flex;
   justify-content: center;
@@ -229,7 +227,6 @@ svg{
   background-color: var(--color-title-text-primary);
 }
 
-
 .toggle-bar{
   position: fixed;
   display: flex;
@@ -286,7 +283,6 @@ svg{
 }
 
 /* section styles ------------------------------------------- */
-
 .section-margin{
   height: 3000px;
   width: 100%;
@@ -301,9 +297,6 @@ svg{
   box-shadow: rgba(160, 160, 165, 0.7) 0px 12px 420px;
   overflow: hidden;
 }
-
-
-
 
 .left{
   margin-right: auto;
@@ -361,11 +354,7 @@ svg{
   color: var(--color-text);
 }
 
-
-
 /* EACH SCROLL TITLE PAGE--------------------------------------- */
-
-
 .section-intro-wrapper{
   position: relative;
   font-size: 75px;
@@ -380,7 +369,6 @@ svg{
   position: relative;
   padding: 0% 5%;
   border-top: 2px solid var(--color-orange);
-
 }
 
 .section-heading{
@@ -429,11 +417,10 @@ svg{
   transform-style:preserve-3d;
   transition:0.8s;
 }
+
 .center h1 span:nth-child(1){
   clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 }
-
-
 
 .center h1 span:nth-child(2){
   color: var(--color-title-text-secondary);
@@ -454,9 +441,6 @@ svg{
   left:0;
   color: var(--color-title-text-primary);
 }
-
-
-
 
 .fourth-section{
     margin-left: 0;
@@ -493,33 +477,49 @@ svg{
   transform: scaleY(1);
 }
 
+.project-list{
+  color: var(--color-title-text-secondary);
+  margin-top: 10px;
+  margin-left: 5%;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
 .fourth-section{
   margin-left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 999999999999;
 }
 
 table{
   position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-/* border: 1px blue solid; */
-height: 100%;
-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px blue solid; */
+  height: 100%;
+  width: 100%;
 }
 
 tr{
   position: inherit;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 50px;
-margin-top: 50px;
-width: 100%;
-bottom: 0;
-/* border: 1px red solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 100%;
+  bottom: 0;
+  /* border: 1px red solid; */
 }
 
 i{
@@ -543,7 +543,7 @@ line-height: 1.5;
   width: 100%;
 }
 .contact-me{
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -565,9 +565,6 @@ cursor: pointer;
 scale: 1.1;
 text-shadow: rgba(0, 0, 0, .75) 0px 5px 15px;
 }
-
-
-
 
 /* download resume button */
 
@@ -687,118 +684,6 @@ ol, li {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.carousel {
-  position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
-  margin-top: 50px;
-}
-
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  background-color: var(--color-blue);
-  counter-increment: item;
-  border-radius: 25px;
-}
-
-.carousel__slide:nth-child(even) {
-  background-color: var(--color-violet);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-40%,70px);
-  color: white;
-  font-size: 2em;
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-}
-
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
-}
-
-.carousel__navigation {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-.carousel__navigation-list,
-.carousel__navigation-item {
-  display: inline-block;
-}
-
-.carousel__navigation-button {
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-  background-color: var(--color-background);
-  background-clip: content-box;
-  box-shadow: 2px 2px 4px var(--color-text);
-  border-radius: 50%;
-  font-size: 16px;
-  transition: background-color 0.15s ease-in;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-}
-
-.carousel__navigation-button:hover {
-  background-color: var(--color-title-text-primary);
-  color: rgb(255, 255, 255);
 }
 
 .project-words{
