@@ -142,16 +142,19 @@
   align-items: flex-start;
   position: absolute;
   bottom: 4rem; 
-  left: 4rem; 
+  left: 10%; 
 }
 
 .animate-slide {
   display: inline-block;
   opacity: 0;
   font-family: 'Montserrat', sans-serif; 
-  font-size: 2rem;
   color: rgba(0, 0, 0, 0.897);
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 3px 3px 0 white;
+  font-size: 2rem;
+  @media (max-width: 429px) {
+    font-size: 1rem; /* Font size for smaller widths */
+  }
 }
 
 .space {

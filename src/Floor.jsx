@@ -44,7 +44,7 @@ const Floor = ({ color, startDelay }) => {
       clearTimeout(delayTimeout);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [maxOffset, startDelay, startOffset]);
 
   return (
     <Circle
