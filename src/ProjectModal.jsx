@@ -18,6 +18,15 @@ const ProjectModal = ({ onClose }) => {
         <ul>
           <li>
             <a
+              href="https://github.com/DeeMo44/WardBot"
+              target="blank"
+              className="project-list"
+            >
+              ➤ AI ChatBot (WardBot)
+            </a>
+          </li>
+          <li>
+            <a
               href="https://dward-ai.vercel.app/"
               target="blank"
               className="project-list"
