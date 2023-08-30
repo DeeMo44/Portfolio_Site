@@ -23,8 +23,10 @@ const SkillModal = ({ onClose }) => {
           <SkillItem icon={<FaReact size={40} />} text="Familiar with React." meterValue={75} />
           <SkillItem icon={<SiJest size={40} />} text="Experience with Jest." meterValue={45} />
           <SkillItem icon={<DiRuby size={40} />} text="Knowledge of Ruby." meterValue={40} />
-          <SkillItem icon={<SiRubyonrails size={40} />} text="Experience with Ruby on Rails." meterValue={70} />
+          <SkillItem icon={<SiRubyonrails size={40} />} text="Experience with Ruby on Rails." meterValue={65} />
           <SkillItem icon={<FaPython size={40} />} text="Working knowledge of Python." meterValue={50} />
+          <SkillItem icon={<FaPython size={40} />} text="Basic knowledge of Django." meterValue={25} />
+          <SkillItem icon={<FaPython size={40} />} text="Experience with Web Scraping." meterValue={70} />
           <SkillItem icon={<BiLogoPostgresql size={40} />} text="Proficient in PostgreSQL." meterValue={75} />
           <SkillItem icon={<DiGit size={40} />} text="Proficient in Git." meterValue={75} />
         </div>

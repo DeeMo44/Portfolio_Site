@@ -18,6 +18,15 @@ const ProjectModal = ({ onClose }) => {
         <ul>
           <li>
             <a
+              href="https://https://sellio-marketplace.onrender.com/"
+              target="blank"
+              className="project-list"
+            >
+              ➤ Sellio Marketplace (Django app)
+            </a>
+          </li>
+          <li>
+            <a
               href="https://github.com/DeeMo44/WardBot"
               target="blank"
               className="project-list"
