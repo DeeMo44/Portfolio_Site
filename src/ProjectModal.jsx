@@ -22,6 +22,24 @@ const ProjectModal = ({ onClose }) => {
               target="blank"
               className="project-list"
             >
+              ➤ 
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/DeeMo44/Jobbidy"
+              target="blank"
+              className="project-list"
+            >
+              ➤ Jobbidy (Job Search Mobile App)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://https://sellio-marketplace.onrender.com/"
+              target="blank"
+              className="project-list"
+            >
               ➤ Sellio Marketplace (Django app)
             </a>
           </li>
@@ -31,7 +49,7 @@ const ProjectModal = ({ onClose }) => {
               target="blank"
               className="project-list"
             >
-              ➤ AI ChatBot (WardBot)
+              ➤ WardBot (AI ChatBot)
             </a>
           </li>
           <li>
