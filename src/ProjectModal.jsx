@@ -18,20 +18,20 @@ const ProjectModal = ({ onClose }) => {
         <ul>
           <li>
             <a
-              href="https://https://sellio-marketplace.onrender.com/"
-              target="blank"
-              className="project-list"
-            >
-              ➤ 
-            </a>
-          </li>
-          <li>
-            <a
               href="https://github.com/DeeMo44/Jobbidy"
               target="blank"
               className="project-list"
             >
               ➤ Jobbidy (Job Search Mobile App)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://duper-chat.vercel.app/"
+              target="blank"
+              className="project-list"
+            >
+              ➤ DuperChat
             </a>
           </li>
           <li>
